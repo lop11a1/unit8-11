@@ -1,0 +1,808 @@
+<!doctype html>
+<html lang="vi" class="h-full">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nghiên cứu ứng dụng Chitosan bảo quản dâu tây</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script src="/_sdk/element_sdk.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&amp;family=Source+Sans+Pro:wght@300;400;600&amp;display=swap" rel="stylesheet">
+  <style>
+    .font-heading { font-family: 'Playfair Display', Georgia, serif; }
+    .font-body { font-family: 'Source Sans Pro', Arial, sans-serif; }
+    
+    .gradient-bg {
+      background: linear-gradient(135deg, #1a472a 0%, #2d5a3d 50%, #3d6b4f 100%);
+    }
+    
+    .card-hover {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card-hover:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    }
+    
+    .strawberry-pattern {
+      background-image: radial-gradient(circle at 20% 80%, rgba(220,38,38,0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(220,38,38,0.08) 0%, transparent 40%),
+                        radial-gradient(circle at 50% 50%, rgba(34,197,94,0.05) 0%, transparent 60%);
+    }
+    
+    .fade-in {
+      animation: fadeInUp 0.6s ease-out forwards;
+      opacity: 0;
+    }
+    
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .delay-1 { animation-delay: 0.1s; }
+    .delay-2 { animation-delay: 0.2s; }
+    .delay-3 { animation-delay: 0.3s; }
+    .delay-4 { animation-delay: 0.4s; }
+    .delay-5 { animation-delay: 0.5s; }
+    
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -8px;
+      top: 8px;
+      width: 16px;
+      height: 16px;
+      background: #dc2626;
+      border-radius: 50%;
+      border: 3px solid #fff;
+      box-shadow: 0 2px 8px rgba(220,38,38,0.3);
+    }
+    
+    .section-divider {
+      height: 4px;
+      background: linear-gradient(90deg, transparent, #dc2626, #22c55e, #dc2626, transparent);
+      border-radius: 2px;
+    }
+  </style>
+  <style>body { box-sizing: border-box; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+ </head>
+ <body class="h-full font-body bg-stone-50 text-stone-800 overflow-auto">
+  <div class="w-full min-h-full strawberry-pattern">
+   <!-- Navigation Menu -->
+   <nav class="sticky top-0 z-50 bg-gradient-to-r from-green-700 to-green-800 text-white shadow-lg">
+    <div class="w-full px-3 py-2 md:px-6 md:py-3">
+     <div class="flex items-center justify-between mb-2">
+      <div class="flex-shrink-0 font-semibold text-base md:text-lg font-heading">
+       Bio-Design
+      </div>
+     </div>
+     <div class="flex gap-1 overflow-x-auto pb-2 -mx-3 px-3"><a href="#intro" class="px-2 md:px-3 py-1 md:py-2 rounded text-xs md:text-sm whitespace-nowrap hover:bg-white/20 transition">📖 Mở đầu</a> <a href="#objectives" class="px-2 md:px-3 py-1 md:py-2 rounded text-xs md:text-sm whitespace-nowrap hover:bg-white/20 transition">🎯 Mục tiêu</a> <a href="#methods" class="px-2 md:px-3 py-1 md:py-2 rounded text-xs md:text-sm whitespace-nowrap hover:bg-white/20 transition">🧪 Phương pháp</a> <a href="#criteria" class="px-2 md:px-3 py-1 md:py-2 rounded text-xs md:text-sm whitespace-nowrap hover:bg-white/20 transition">📊 Tiêu chí</a> <a href="#results" class="px-2 md:px-3 py-1 md:py-2 rounded text-xs md:text-sm whitespace-nowrap hover:bg-white/20 transition">📋 Kết quả</a> <a href="#discussion" class="px-2 md:px-3 py-1 md:py-2 rounded text-xs md:text-sm whitespace-nowrap hover:bg-white/20 transition">💡 Thảo luận</a> <a href="#conclusion" class="px-2 md:px-3 py-1 md:py-2 rounded text-xs md:text-sm whitespace-nowrap hover:bg-white/20 transition">🏆 Kết luận</a> <a href="#team" class="px-2 md:px-3 py-1 md:py-2 rounded text-xs md:text-sm whitespace-nowrap hover:bg-white/20 transition">👥 Đội</a>
+     </div>
+    </div>
+   </nav><!-- Hero Section -->
+   <header class="gradient-bg text-white py-8 md:py-16 px-4 md:px-6 relative overflow-hidden">
+    <div class="absolute top-0 right-0 w-48 md:w-64 h-48 md:h-64 opacity-10">
+     <svg viewbox="0 0 100 100" fill="currentColor">
+      <ellipse cx="50" cy="55" rx="35" ry="40" /> <path d="M30 20 Q50 5 70 20 L65 25 Q50 15 35 25 Z" fill="#22c55e" />
+     </svg>
+    </div>
+    <div class="max-w-5xl mx-auto relative z-10">
+     <div class="fade-in">
+      <span class="inline-block bg-red-500 text-white text-xs md:text-sm font-semibold px-3 md:px-4 py-1 rounded-full mb-4"> 🔬 Nghiên cứu Khoa học </span>
+     </div>
+     <h1 id="main-title" class="font-heading text-2xl md:text-5xl font-bold mb-4 md:mb-6 leading-tight fade-in delay-1">Ứng dụng Chitosan từ vỏ tôm<br>
+       trong bảo quản trái dâu tây</h1>
+     <p id="intro-text" class="text-base md:text-xl text-green-100 max-w-3xl fade-in delay-2">Nghiên cứu về việc sử dụng vật liệu sinh học thân thiện môi trường để kéo dài thời gian bảo quản nông sản tươi</p>
+     <div class="flex flex-wrap gap-2 md:gap-4 mt-6 md:mt-8 fade-in delay-3">
+      <div class="flex items-center gap-2 bg-white/10 backdrop-blur px-3 md:px-4 py-2 rounded-lg text-xs md:text-base">
+       <span class="text-xl md:text-2xl">🍓</span> <span class="hidden sm:inline">Dâu tây tươi</span><span class="sm:hidden">Dâu tây</span>
+      </div>
+      <div class="flex items-center gap-2 bg-white/10 backdrop-blur px-3 md:px-4 py-2 rounded-lg text-xs md:text-base">
+       <span class="text-xl md:text-2xl">🦐</span> <span class="hidden sm:inline">Chitosan từ vỏ tôm</span><span class="sm:hidden">Chitosan</span>
+      </div>
+      <div class="flex items-center gap-2 bg-white/10 backdrop-blur px-3 md:px-4 py-2 rounded-lg text-xs md:text-base">
+       <span class="text-xl md:text-2xl">🌿</span> <span class="hidden sm:inline">Thân thiện môi trường</span><span class="sm:hidden">Bền vững</span>
+      </div>
+     </div>
+    </div>
+   </header><!-- Main Content -->
+   <main class="w-full px-4 md:px-6 py-6 md:py-12">
+    <!-- Introduction Section -->
+    <section id="intro" class="mb-12 md:mb-16 fade-in delay-4 max-w-5xl mx-auto">
+     <div class="bg-white rounded-2xl shadow-lg p-6 md:p-8 card-hover">
+      <div class="flex items-center gap-3 mb-6">
+       <div class="w-10 md:w-12 h-10 md:h-12 bg-green-100 rounded-xl flex items-center justify-center">
+        <span class="text-xl md:text-2xl">📖</span>
+       </div>
+       <h2 class="font-heading text-xl md:text-2xl font-semibold text-green-800">I. Mở đầu</h2>
+      </div>
+      <div class="prose prose-lg text-stone-600 space-y-4 text-sm md:text-base">
+       <p>Trong những năm gần đây, việc sử dụng các <strong class="text-green-700">vật liệu sinh học thân thiện với môi trường</strong> để bảo quản thực phẩm đang được quan tâm rộng rãi.</p>
+       <p><strong class="text-green-700">Chitosan</strong> là một polysaccharide tự nhiên được điều chế chủ yếu từ chitin có trong vỏ tôm, cua. Với đặc tính <em>kháng khuẩn</em>, <em>tạo màng sinh học</em> và <em>an toàn cho sức khỏe con người</em>, chitosan được xem là một giải pháp tiềm năng trong bảo quản nông sản tươi.</p>
+       <div class="bg-red-50 border-l-4 border-red-400 p-4 rounded-r-lg">
+        <p class="text-red-800 mb-0"><strong>🍓 Trái dâu tây</strong> là loại quả có giá trị dinh dưỡng cao nhưng rất dễ hư hỏng do hàm lượng nước lớn, vỏ mỏng và dễ bị vi sinh vật tấn công.</p>
+       </div>
+      </div>
+     </div>
+    </section><!-- Objectives Section -->
+    <section id="objectives" class="mb-16 fade-in delay-5">
+     <div class="bg-gradient-to-br from-red-500 to-red-600 rounded-2xl shadow-lg p-8 text-white">
+      <div class="flex items-center gap-3 mb-6">
+       <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center">
+        <span class="text-2xl">🎯</span>
+       </div>
+       <h2 class="font-heading text-2xl font-semibold">II. Mục tiêu nghiên cứu</h2>
+      </div>
+      <div class="grid md:grid-cols-2 gap-6">
+       <div class="bg-white/10 backdrop-blur rounded-xl p-6">
+        <h3 class="font-semibold text-lg mb-3 flex items-center gap-2"><span class="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center text-sm">1</span> Điều chế dung dịch</h3>
+        <p class="text-red-100">Điều chế dung dịch từ chitosan thô để sử dụng trong thí nghiệm</p>
+       </div>
+       <div class="bg-white/10 backdrop-blur rounded-xl p-6">
+        <h3 class="font-semibold text-lg mb-3 flex items-center gap-2"><span class="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center text-sm">2</span> Khảo sát khả năng bảo quản</h3>
+        <p class="text-red-100">Thử nghiệm các phương pháp nhúng chitosan khác nhau</p>
+       </div>
+       <div class="bg-white/10 backdrop-blur rounded-xl p-6">
+        <h3 class="font-semibold text-lg mb-3 flex items-center gap-2"><span class="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center text-sm">3</span> So sánh kết quả</h3>
+        <p class="text-red-100">Đánh giá mức độ tươi, hư hỏng của trái dâu sau thời gian bảo quản</p>
+       </div>
+       <div class="bg-white/10 backdrop-blur rounded-xl p-6">
+        <h3 class="font-semibold text-lg mb-3 flex items-center gap-2"><span class="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center text-sm">4</span> Kết luận</h3>
+        <p class="text-red-100">Đưa ra nhận định về hiệu quả của chitosan</p>
+       </div>
+      </div>
+     </div>
+    </section>
+    <div class="section-divider mb-16"></div><!-- Materials & Methods -->
+    <section id="methods" class="mb-16">
+     <div class="flex items-center gap-3 mb-8">
+      <div class="w-12 h-12 bg-green-600 rounded-xl flex items-center justify-center">
+       <span class="text-2xl text-white">🧪</span>
+      </div>
+      <h2 class="font-heading text-2xl font-semibold text-green-800">III. Vật liệu &amp; Phương pháp</h2>
+     </div>
+     <div class="grid md:grid-cols-2 gap-8">
+      <!-- Materials -->
+      <div class="bg-white rounded-2xl shadow-lg p-6 card-hover">
+       <h3 class="font-heading text-xl font-semibold text-stone-800 mb-4 flex items-center gap-2"><span class="text-green-600">📦</span> Vật liệu</h3>
+       <ul class="space-y-3">
+        <li class="flex items-start gap-3"><span class="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">✓</span> <span>Chitosan thô</span></li>
+        <li class="flex items-start gap-3"><span class="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">✓</span> <span>Trái dâu tươi (kích thước và độ chín đồng đều)</span></li>
+        <li class="flex items-start gap-3"><span class="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">✓</span> <span>Axit axetic loãng</span></li>
+        <li class="flex items-start gap-3"><span class="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">✓</span> <span>Dụng cụ: cốc thủy tinh, rây lọc, khay đựng...</span></li>
+       </ul>
+      </div><!-- Process -->
+      <div class="bg-white rounded-2xl shadow-lg p-6 card-hover">
+       <h3 class="font-heading text-xl font-semibold text-stone-800 mb-4 flex items-center gap-2"><span class="text-green-600">⚗️</span> Quy trình điều chế</h3>
+       <div class="relative pl-6 space-y-4">
+        <div class="absolute left-0 top-2 bottom-2 w-0.5 bg-gradient-to-b from-green-400 to-red-400"></div>
+        <div class="timeline-item relative pl-4">
+         <p class="text-sm"><strong>Bước 1:</strong> Nghiền nhỏ chitosan thô</p>
+        </div>
+        <div class="timeline-item relative pl-4">
+         <p class="text-sm"><strong>Bước 2:</strong> Cân 0,2g chitosan + 20ml axit axetic</p>
+        </div>
+        <div class="timeline-item relative pl-4">
+         <p class="text-sm"><strong>Bước 3:</strong> Điều chỉnh pH 5.0-5.5</p>
+        </div>
+        <div class="timeline-item relative pl-4">
+         <p class="text-sm"><strong>Bước 4:</strong> Khuấy đều, để yên 12 giờ</p>
+        </div>
+        <div class="timeline-item relative pl-4">
+         <p class="text-sm"><strong>Bước 5:</strong> Lọc và thu dung dịch</p>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section><!-- Experiment Groups -->
+    <section class="mb-16">
+     <h3 class="font-heading text-xl font-semibold text-stone-800 mb-6 text-center">Bố trí thí nghiệm</h3>
+     <div class="grid md:grid-cols-3 gap-6">
+      <div class="bg-stone-100 rounded-2xl p-6 text-center card-hover border-2 border-stone-200">
+       <div class="w-16 h-16 bg-stone-300 rounded-full flex items-center justify-center mx-auto mb-4">
+        <span class="text-3xl">🍓</span>
+       </div>
+       <h4 class="font-semibold text-lg text-stone-700 mb-2">Nhóm 1</h4>
+       <p class="text-stone-500 text-sm">Đối chứng</p>
+       <p class="mt-3 text-stone-600">Không nhúng chitosan</p>
+      </div>
+      <div class="bg-green-50 rounded-2xl p-6 text-center card-hover border-2 border-green-200">
+       <div class="w-16 h-16 bg-green-200 rounded-full flex items-center justify-center mx-auto mb-4">
+        <span class="text-3xl">🍓</span>
+       </div>
+       <h4 class="font-semibold text-lg text-green-700 mb-2">Nhóm 2</h4>
+       <p class="text-green-500 text-sm">Xử lý 1 lần</p>
+       <p class="mt-3 text-green-600">Nhúng chitosan 1 lần</p>
+      </div>
+      <div class="bg-green-100 rounded-2xl p-6 text-center card-hover border-2 border-green-300">
+       <div class="w-16 h-16 bg-green-300 rounded-full flex items-center justify-center mx-auto mb-4">
+        <span class="text-3xl">🍓</span>
+       </div>
+       <h4 class="font-semibold text-lg text-green-800 mb-2">Nhóm 3</h4>
+       <p class="text-green-600 text-sm">Xử lý 2 lần</p>
+       <p class="mt-3 text-green-700">Nhúng chitosan 2 lần</p>
+      </div>
+     </div>
+    </section>
+    <div class="section-divider mb-16"></div><!-- Evaluation Criteria -->
+    <section id="criteria" class="mb-16">
+     <div class="bg-white rounded-2xl shadow-lg p-8">
+      <div class="flex items-center gap-3 mb-6">
+       <div class="w-12 h-12 bg-amber-100 rounded-xl flex items-center justify-center">
+        <span class="text-2xl">📊</span>
+       </div>
+       <div>
+        <h2 class="font-heading text-2xl font-semibold text-stone-800">Tiêu chí đánh giá</h2>
+        <p class="text-sm text-stone-500">Theo định hướng TCVN 3215-79</p>
+       </div>
+      </div>
+      <div class="grid md:grid-cols-5 gap-4">
+       <div class="bg-gradient-to-br from-red-50 to-red-100 rounded-xl p-4 text-center">
+        <div class="text-3xl mb-2">
+         🎨
+        </div>
+        <h4 class="font-semibold text-red-800 text-sm">Màu sắc</h4>
+        <p class="text-xs text-red-600 mt-1">Độ đỏ tươi, sẫm màu</p>
+       </div>
+       <div class="bg-gradient-to-br from-amber-50 to-amber-100 rounded-xl p-4 text-center">
+        <div class="text-3xl mb-2">
+         ✨
+        </div>
+        <h4 class="font-semibold text-amber-800 text-sm">Bề mặt</h4>
+        <p class="text-xs text-amber-600 mt-1">Khô ráo, nhăn vỏ</p>
+       </div>
+       <div class="bg-gradient-to-br from-green-50 to-green-100 rounded-xl p-4 text-center">
+        <div class="text-3xl mb-2">
+         💎
+        </div>
+        <h4 class="font-semibold text-green-800 text-sm">Nguyên vẹn</h4>
+        <p class="text-xs text-green-600 mt-1">Dập nát, nứt vỡ</p>
+       </div>
+       <div class="bg-gradient-to-br from-purple-50 to-purple-100 rounded-xl p-4 text-center">
+        <div class="text-3xl mb-2">
+         👃
+        </div>
+        <h4 class="font-semibold text-purple-800 text-sm">Mùi</h4>
+        <p class="text-xs text-purple-600 mt-1">Tự nhiên, lên men</p>
+       </div>
+       <div class="bg-gradient-to-br from-stone-50 to-stone-100 rounded-xl p-4 text-center">
+        <div class="text-3xl mb-2">
+         🔬
+        </div>
+        <h4 class="font-semibold text-stone-800 text-sm">Nấm mốc</h4>
+        <p class="text-xs text-stone-600 mt-1">Có/không, mức độ</p>
+       </div>
+      </div>
+     </div>
+    </section><!-- Results Table with Images -->
+    <section id="results" class="mb-16">
+     <h3 class="font-heading text-2xl font-semibold text-stone-800 mb-6">📋 Bảng ghi nhận kết quả</h3><!-- Daily Progress with Images -->
+     <div class="space-y-8 mb-8"><!-- Day 1 -->
+      <div class="bg-white rounded-2xl shadow-lg p-6">
+       <h4 class="font-semibold text-lg text-stone-800 mb-4">📅 Ngày 1: Trạng thái ban đầu</h4>
+       <div class="grid grid-cols-3 gap-4">
+        <div class="text-center">
+         <div class="bg-stone-200 rounded-lg p-4 h-48 flex items-center justify-center text-sm text-stone-600 mb-2 overflow-hidden border-2 border-dashed border-stone-400">
+          <div class="text-center">
+           <p class="text-4xl mb-2">📸</p>
+           <p class="text-xs font-medium">Thêm ảnh Ngày 1</p>
+          </div>
+         </div>
+         <p class="font-semibold text-stone-700">Nhóm Đối chứng</p>
+         <p class="text-xs text-stone-500">Không nhúng</p>
+        </div>
+        <div class="text-center">
+         <div class="bg-green-50 rounded-lg p-4 h-48 flex items-center justify-center text-sm text-stone-600 mb-2 overflow-hidden border-2 border-dashed border-green-400">
+          <div class="text-center">
+           <p class="text-4xl mb-2">📸</p>
+           <p class="text-xs font-medium">Thêm ảnh Ngày 1</p>
+          </div>
+         </div>
+         <p class="font-semibold text-stone-700">Nhúng 1 lần</p>
+         <p class="text-xs text-stone-500">Có màng nhẹ</p>
+        </div>
+        <div class="text-center">
+         <div class="bg-green-100 rounded-lg p-4 h-48 flex items-center justify-center text-sm text-stone-600 mb-2 overflow-hidden border-2 border-dashed border-green-500">
+          <div class="text-center">
+           <p class="text-4xl mb-2">📸</p>
+           <p class="text-xs font-medium">Thêm ảnh Ngày 1</p>
+          </div>
+         </div>
+         <p class="font-semibold text-stone-700">Nhúng 2 lần</p>
+         <p class="text-xs text-stone-500">Màng bóng rõ</p>
+        </div>
+       </div>
+       <p class="text-stone-600 text-sm mt-4 text-center">✅ Tươi, cứng chắc, đỏ tươi | ✅ Tươi, cứng chắc | ✅ Tươi, rất cứng</p>
+      </div><!-- Day 2 -->
+      <div class="bg-white rounded-2xl shadow-lg p-6">
+       <h4 class="font-semibold text-lg text-stone-800 mb-4">📅 Ngày 2: Bắt đầu thay đổi</h4>
+       <div class="grid grid-cols-3 gap-4">
+        <div class="text-center">
+         <div class="bg-amber-100 rounded-lg p-4 h-48 flex items-center justify-center text-sm text-stone-600 mb-2 overflow-hidden border-2 border-dashed border-amber-400">
+          <div class="text-center">
+           <p class="text-4xl mb-2">📸</p>
+           <p class="text-xs font-medium">Thêm ảnh Ngày 2</p>
+          </div>
+         </div>
+         <p class="font-semibold text-stone-700">Nhóm Đối chứng</p>
+         <p class="text-xs text-stone-500">Bắt đầu se lại</p>
+        </div>
+        <div class="text-center">
+         <div class="bg-green-50 rounded-lg p-4 h-48 flex items-center justify-center text-sm text-stone-600 mb-2 overflow-hidden border-2 border-dashed border-green-400">
+          <div class="text-center">
+           <p class="text-4xl mb-2">📸</p>
+           <p class="text-xs font-medium">Thêm ảnh Ngày 2</p>
+          </div>
+         </div>
+         <p class="font-semibold text-stone-700">Nhúng 1 lần</p>
+         <p class="text-xs text-stone-500">Ổn định</p>
+        </div>
+        <div class="text-center">
+         <div class="bg-green-100 rounded-lg p-4 h-48 flex items-center justify-center text-sm text-stone-600 mb-2 overflow-hidden border-2 border-dashed border-green-500">
+          <div class="text-center">
+           <p class="text-4xl mb-2">📸</p>
+           <p class="text-xs font-medium">Thêm ảnh Ngày 2</p>
+          </div>
+         </div>
+         <p class="font-semibold text-stone-700">Nhúng 2 lần</p>
+         <p class="text-xs text-stone-500">Ổn định</p>
+        </div>
+       </div>
+       <p class="text-stone-600 text-sm mt-4 text-center">⚠️ Se lại, mất độ bóng | ✅ Tươi xanh | ✅ Tươi xanh</p>
+      </div><!-- Day 3 -->
+      <div class="bg-white rounded-2xl shadow-lg p-6">
+       <h4 class="font-semibold text-lg text-stone-800 mb-4">📅 Ngày 3: Sự khác biệt rõ ràng</h4>
+       <div class="grid grid-cols-3 gap-4">
+        <div class="text-center">
+         <div class="bg-amber-200 rounded-lg p-4 h-48 flex items-center justify-center text-sm text-stone-600 mb-2 overflow-hidden border-2 border-dashed border-amber-500">
+          <div class="text-center">
+           <p class="text-4xl mb-2">📸</p>
+           <p class="text-xs font-medium">Thêm ảnh Ngày 3</p>
+          </div>
+         </div>
+         <p class="font-semibold text-stone-700">Nhóm Đối chứng</p>
+         <p class="text-xs text-stone-500">Sẫm màu, dập</p>
+        </div>
+        <div class="text-center">
+         <div class="bg-green-50 rounded-lg p-4 h-48 flex items-center justify-center text-sm text-stone-600 mb-2 overflow-hidden border-2 border-dashed border-green-400">
+          <div class="text-center">
+           <p class="text-4xl mb-2">📸</p>
+           <p class="text-xs font-medium">Thêm ảnh Ngày 3</p>
+          </div>
+         </div>
+         <p class="font-semibold text-stone-700">Nhúng 1 lần</p>
+         <p class="text-xs text-stone-500">Giữ màu tốt</p>
+        </div>
+        <div class="text-center">
+         <div class="bg-green-100 rounded-lg p-4 h-48 flex items-center justify-center text-sm text-stone-600 mb-2 overflow-hidden border-2 border-dashed border-green-500">
+          <div class="text-center">
+           <p class="text-4xl mb-2">📸</p>
+           <p class="text-xs font-medium">Thêm ảnh Ngày 3</p>
+          </div>
+         </div>
+         <p class="font-semibold text-stone-700">Nhúng 2 lần</p>
+         <p class="text-xs text-stone-500">Chưa đổi màu</p>
+        </div>
+       </div>
+       <p class="text-stone-600 text-sm mt-4 text-center">❌ Sẫm, đốm cứng | ✅ Màu tốt, cứng | ✅ Rất cứng</p>
+      </div><!-- Day 4 -->
+      <div class="bg-white rounded-2xl shadow-lg p-6">
+       <h4 class="font-semibold text-lg text-stone-800 mb-4">📅 Ngày 4: Mất nước</h4>
+       <div class="grid grid-cols-3 gap-4">
+        <div class="text-center">
+         <div class="bg-red-200 rounded-lg p-4 h-48 flex items-center justify-center text-sm text-stone-600 mb-2 overflow-hidden border-2 border-dashed border-red-400">
+          <div class="text-center">
+           <p class="text-4xl mb-2">📸</p>
+           <p class="text-xs font-medium">Thêm ảnh Ngày 4</p>
+          </div>
+         </div>
+         <p class="font-semibold text-stone-700">Nhóm Đối chứng</p>
+         <p class="text-xs text-stone-500">Chảy nước</p>
+        </div>
+        <div class="text-center">
+         <div class="bg-green-50 rounded-lg p-4 h-48 flex items-center justify-center text-sm text-stone-600 mb-2 overflow-hidden border-2 border-dashed border-green-400">
+          <div class="text-center">
+           <p class="text-4xl mb-2">📸</p>
+           <p class="text-xs font-medium">Thêm ảnh Ngày 4</p>
+          </div>
+         </div>
+         <p class="font-semibold text-stone-700">Nhúng 1 lần</p>
+         <p class="text-xs text-stone-500">Khô ráo, mềm</p>
+        </div>
+        <div class="text-center">
+         <div class="bg-green-100 rounded-lg p-4 h-48 flex items-center justify-center text-sm text-stone-600 mb-2 overflow-hidden border-2 border-dashed border-green-500">
+          <div class="text-center">
+           <p class="text-4xl mb-2">📸</p>
+           <p class="text-xs font-medium">Thêm ảnh Ngày 4</p>
+          </div>
+         </div>
+         <p class="font-semibold text-stone-700">Nhúng 2 lần</p>
+         <p class="text-xs text-stone-500">Khô ráo, chắc</p>
+        </div>
+       </div>
+       <p class="text-stone-600 text-sm mt-4 text-center">❌ Chảy nước, nhũn | ⚠️ Bắt đầu mềm | ✅ Chắc chắn</p>
+      </div><!-- Day 5 -->
+      <div class="bg-white rounded-2xl shadow-lg p-6">
+       <h4 class="font-semibold text-lg text-stone-800 mb-4">📅 Ngày 5: Nấm mốc xuất hiện</h4>
+       <div class="grid grid-cols-3 gap-4">
+        <div class="text-center">
+         <div class="bg-red-300 rounded-lg p-4 h-48 flex items-center justify-center text-sm text-stone-600 mb-2 overflow-hidden border-2 border-dashed border-red-500">
+          <div class="text-center">
+           <p class="text-4xl mb-2">📸</p>
+           <p class="text-xs font-medium">Thêm ảnh Ngày 5</p>
+          </div>
+         </div>
+         <p class="font-semibold text-stone-700">Nhóm Đối chứng</p>
+         <p class="text-xs text-stone-500">Nấm mốc trắng</p>
+        </div>
+        <div class="text-center">
+         <div class="bg-yellow-50 rounded-lg p-4 h-48 flex items-center justify-center text-sm text-stone-600 mb-2 overflow-hidden border-2 border-dashed border-yellow-400">
+          <div class="text-center">
+           <p class="text-4xl mb-2">📸</p>
+           <p class="text-xs font-medium">Thêm ảnh Ngày 5</p>
+          </div>
+         </div>
+         <p class="font-semibold text-stone-700">Nhúng 1 lần</p>
+         <p class="text-xs text-stone-500">Chưa có nấm</p>
+        </div>
+        <div class="text-center">
+         <div class="bg-green-100 rounded-lg p-4 h-48 flex items-center justify-center text-sm text-stone-600 mb-2 overflow-hidden border-2 border-dashed border-green-500">
+          <div class="text-center">
+           <p class="text-4xl mb-2">📸</p>
+           <p class="text-xs font-medium">Thêm ảnh Ngày 5</p>
+          </div>
+         </div>
+         <p class="font-semibold text-stone-700">Nhúng 2 lần</p>
+         <p class="text-xs text-stone-500">Không nấm</p>
+        </div>
+       </div>
+       <p class="text-stone-600 text-sm mt-4 text-center">❌ Nấm lan rộng, nhũn | ⚠️ Mềm, hơi ẩm | ✅ Giữ form tốt</p>
+      </div><!-- Day 6 -->
+      <div class="bg-white rounded-2xl shadow-lg p-6">
+       <h4 class="font-semibold text-lg text-stone-800 mb-4">📅 Ngày 6: Chỉ nhúng 2 lần còn tươi</h4>
+       <div class="grid grid-cols-3 gap-4">
+        <div class="text-center">
+         <div class="bg-red-400 rounded-lg p-4 h-48 flex items-center justify-center text-sm text-stone-600 mb-2 overflow-hidden border-2 border-dashed border-red-600">
+          <div class="text-center">
+           <p class="text-4xl mb-2">📸</p>
+           <p class="text-xs font-medium">Thêm ảnh Ngày 6</p>
+          </div>
+         </div>
+         <p class="font-semibold text-stone-700">Nhóm Đối chứng</p>
+         <p class="text-xs text-stone-500">Hỏng hoàn toàn</p>
+        </div>
+        <div class="text-center">
+         <div class="bg-yellow-100 rounded-lg p-4 h-48 flex items-center justify-center text-sm text-stone-600 mb-2 overflow-hidden border-2 border-dashed border-yellow-500">
+          <div class="text-center">
+           <p class="text-4xl mb-2">📸</p>
+           <p class="text-xs font-medium">Thêm ảnh Ngày 6</p>
+          </div>
+         </div>
+         <p class="font-semibold text-stone-700">Nhúng 1 lần</p>
+         <p class="text-xs text-stone-500">Mềm nhũn, có nấm</p>
+        </div>
+        <div class="text-center">
+         <div class="bg-green-100 rounded-lg p-4 h-48 flex items-center justify-center text-sm text-stone-600 mb-2 overflow-hidden border-2 border-dashed border-green-500">
+          <div class="text-center">
+           <p class="text-4xl mb-2">📸</p>
+           <p class="text-xs font-medium">Thêm ảnh Ngày 6</p>
+          </div>
+         </div>
+         <p class="font-semibold text-stone-700">Nhúng 2 lần</p>
+         <p class="text-xs text-stone-500">Vẫn tươi đẹp</p>
+        </div>
+       </div>
+       <p class="text-stone-600 text-sm mt-4 text-center">❌ Mùi chua lên men | ⚠️ Mùi dâu chín | ✅ Mùi tự nhiên</p>
+      </div><!-- Day 7 -->
+      <div class="bg-white rounded-2xl shadow-lg p-6 border-2 border-green-500">
+       <h4 class="font-semibold text-lg text-stone-800 mb-4">📅 Ngày 7: Kết quả cuối cùng</h4>
+       <div class="grid grid-cols-3 gap-4">
+        <div class="text-center">
+         <div class="bg-red-500 rounded-lg p-4 h-48 flex items-center justify-center text-sm text-stone-600 mb-2 overflow-hidden border-2 border-dashed border-red-700">
+          <div class="text-center">
+           <p class="text-4xl mb-2">📸</p>
+           <p class="text-xs font-medium">Thêm ảnh Ngày 7</p>
+          </div>
+         </div>
+         <p class="font-semibold text-red-700">Nhóm Đối chứng</p>
+         <p class="text-xs text-red-600 font-bold">🗑️ HỎNG HOÀN TOÀN</p>
+        </div>
+        <div class="text-center">
+         <div class="bg-yellow-200 rounded-lg p-4 h-48 flex items-center justify-center text-sm text-stone-600 mb-2 overflow-hidden border-2 border-dashed border-yellow-600">
+          <div class="text-center">
+           <p class="text-4xl mb-2">📸</p>
+           <p class="text-xs font-medium">Thêm ảnh Ngày 7</p>
+          </div>
+         </div>
+         <p class="font-semibold text-yellow-700">Nhúng 1 lần</p>
+         <p class="text-xs text-yellow-600 font-bold">⚠️ MỀM NHŨN, CÓ NẤM</p>
+        </div>
+        <div class="text-center">
+         <div class="bg-green-200 rounded-lg p-4 h-48 flex items-center justify-center text-sm text-stone-600 mb-2 overflow-hidden border-2 border-green-600">
+          <div class="text-center">
+           <p class="text-4xl mb-2">📸</p>
+           <p class="text-xs font-medium">Thêm ảnh Ngày 7</p>
+          </div>
+         </div>
+         <p class="font-semibold text-green-700">Nhúng 2 lần</p>
+         <p class="text-xs text-green-600 font-bold">✅ VẪNTƯƠI, CHẤT LƯỢNG CAO</p>
+        </div>
+       </div>
+       <div class="mt-6 p-4 bg-gradient-to-r from-green-50 to-green-100 rounded-lg border-2 border-green-500">
+        <p class="text-center text-green-800 font-semibold">🏆 Phương pháp nhúng chitosan 2 lần hiệu quả nhất!</p>
+       </div>
+      </div>
+     </div><!-- Data Table -->
+     <h4 class="font-semibold text-lg text-stone-800 mb-4 mt-8">📊 Chi tiết theo dõi hàng ngày</h4>
+     <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
+      <div class="overflow-x-auto">
+       <table class="w-full text-sm">
+        <thead>
+         <tr class="bg-gradient-to-r from-green-600 to-green-700 text-white">
+          <th class="px-4 py-3 text-left font-semibold">Ngày</th>
+          <th class="px-4 py-3 text-left font-semibold">Tiêu chí</th>
+          <th class="px-4 py-3 text-left font-semibold bg-stone-300/30">Nhóm Đối chứng</th>
+          <th class="px-4 py-3 text-left font-semibold bg-green-200/30">Nhúng 1 lần</th>
+          <th class="px-4 py-3 text-left font-semibold bg-green-300/30">Nhúng 2 lần</th>
+         </tr>
+        </thead>
+        <tbody class="divide-y divide-stone-200">
+         <tr class="hover:bg-stone-50">
+          <td class="px-4 py-3 font-semibold text-center bg-stone-100">1</td>
+          <td class="px-4 py-3 font-semibold">Tổng quát</td>
+          <td class="px-4 py-3 bg-stone-50">Tươi, đỏ tươi, quả cứng chắc.</td>
+          <td class="px-4 py-3 bg-green-50">Tươi, có màng bóng nhẹ, cứng.</td>
+          <td class="px-4 py-3 bg-green-100">Tươi, màng bóng rõ, quả rất cứng.</td>
+         </tr>
+         <tr class="hover:bg-stone-50">
+          <td class="px-4 py-3 font-semibold text-center bg-stone-100">2</td>
+          <td class="px-4 py-3 font-semibold">Tổng quát</td>
+          <td class="px-4 py-3 bg-stone-50">Vỏ bắt đầu se lại, giảm độ bóng.</td>
+          <td class="px-4 py-3 bg-green-50">Trạng thái ổn định, tươi xanh.</td>
+          <td class="px-4 py-3 bg-green-100">Trạng thái ổn định, tươi xanh.</td>
+         </tr>
+         <tr class="hover:bg-stone-50">
+          <td class="px-4 py-3 font-semibold text-center bg-stone-100">3</td>
+          <td class="px-4 py-3 font-semibold">Độ cứng</td>
+          <td class="px-4 py-3 bg-stone-50">Xuất hiện vỏ hơi sẫm, đốm cứng.</td>
+          <td class="px-4 py-3 bg-green-50">Quả màu vẫn tốt, cứng giữ màu.</td>
+          <td class="px-4 py-3 bg-green-100">Quả rất cứng, chưa thay đổi màu.</td>
+         </tr>
+         <tr class="hover:bg-stone-50">
+          <td class="px-4 py-3 font-semibold text-center bg-stone-100">4</td>
+          <td class="px-4 py-3 font-semibold">Chảy nước</td>
+          <td class="px-4 py-3 bg-stone-50">Bắt đầu chảy nước nhẹ ở đáy quả.</td>
+          <td class="px-4 py-3 bg-green-50">Bề mặt khô ráo, quả hơi mềm.</td>
+          <td class="px-4 py-3 bg-green-100">Bề mặt khô ráo, quả vẫn chắc.</td>
+         </tr>
+         <tr class="hover:bg-stone-50">
+          <td class="px-4 py-3 font-semibold text-center bg-stone-100">5</td>
+          <td class="px-4 py-3 font-semibold">Nấm mốc</td>
+          <td class="px-4 py-3 bg-stone-50">Nấm mốc trắng xuất hiện, quả nhũn.</td>
+          <td class="px-4 py-3 bg-green-50">Chưa thấy nấm, quả bắt đầu mềm.</td>
+          <td class="px-4 py-3 bg-green-100">Không nấm, quả giữ form tốt.</td>
+         </tr>
+         <tr class="hover:bg-stone-50">
+          <td class="px-4 py-3 font-semibold text-center bg-stone-100">6</td>
+          <td class="px-4 py-3 font-semibold">Mùi</td>
+          <td class="px-4 py-3 bg-stone-50">Có mùi chua lên men, nấm lan rộng.</td>
+          <td class="px-4 py-3 bg-green-50">Mùi dâu chín, hơi ẩm bề mặt.</td>
+          <td class="px-4 py-3 bg-green-100">Mùi dâu tự nhiên, quả vẫn đẹp.</td>
+         </tr>
+         <tr class="hover:bg-stone-50">
+          <td class="px-4 py-3 font-semibold text-center bg-stone-100">7</td>
+          <td class="px-4 py-3 font-semibold">✅ Kết quả</td>
+          <td class="px-4 py-3 bg-red-50"><strong class="text-red-700">Hỏng hoàn toàn</strong></td>
+          <td class="px-4 py-3 bg-yellow-50"><strong class="text-yellow-700">Mềm nhũn, có nấm</strong></td>
+          <td class="px-4 py-3 bg-green-100"><strong class="text-green-700">Vẫn tươi, chất lượng cao</strong></td>
+         </tr>
+        </tbody>
+       </table>
+      </div>
+     </div>
+    </section>
+    <div class="section-divider mb-16"></div><!-- Discussion Section -->
+    <section id="discussion" class="mb-16">
+     <h3 class="font-heading text-2xl font-semibold text-stone-800 mb-6">💡 Thảo luận kết quả</h3>
+     <div class="grid md:grid-cols-3 gap-6 mb-8">
+      <div class="bg-gradient-to-br from-red-50 to-red-100 rounded-2xl p-6 border-l-4 border-red-500 card-hover">
+       <div class="flex items-start gap-3 mb-3"><span class="text-2xl">❌</span>
+        <h4 class="font-semibold text-red-800">Nhóm Đối chứng</h4>
+       </div>
+       <p class="text-stone-700 text-sm">Mẫu không nhúng chitosan có tốc độ hư hỏng <strong>nhanh nhất</strong>, dễ mềm và xuất hiện nấm mốc sớm (từ ngày thứ 5).</p>
+      </div>
+      <div class="bg-gradient-to-br from-yellow-50 to-yellow-100 rounded-2xl p-6 border-l-4 border-yellow-500 card-hover">
+       <div class="flex items-start gap-3 mb-3"><span class="text-2xl">⚠️</span>
+        <h4 class="font-semibold text-yellow-800">Nhúng 1 lần</h4>
+       </div>
+       <p class="text-stone-700 text-sm">Mẫu nhúng chitosan 1 lần cho thấy khả năng bảo quản <strong>tốt hơn</strong>, làm chậm quá trình hư hỏng đáng kể.</p>
+      </div>
+      <div class="bg-gradient-to-br from-green-50 to-green-100 rounded-2xl p-6 border-l-4 border-green-500 card-hover">
+       <div class="flex items-start gap-3 mb-3"><span class="text-2xl">✅</span>
+        <h4 class="font-semibold text-green-800">Nhúng 2 lần</h4>
+       </div>
+       <p class="text-stone-700 text-sm">Mẫu nhúng chitosan 2 lần có hiệu quả bảo quản <strong>cao nhất</strong>, hạn chế mất nước và sự phát triển vi sinh vật.</p>
+      </div>
+     </div>
+     <div class="bg-white rounded-2xl shadow-lg p-8 border-t-4 border-green-600">
+      <h4 class="font-semibold text-lg text-stone-800 mb-4 flex items-center gap-2"><span class="text-2xl">🎯</span> Nguyên lý hoạt động</h4>
+      <p class="text-stone-700 leading-relaxed mb-4">Lớp màng chitosan tạo thành trên bề mặt trái dâu đóng vai trò như một <strong>hàng rào bảo vệ</strong> hiệu quả:</p>
+      <ul class="space-y-3">
+       <li class="flex items-start gap-3"><span class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 text-sm font-bold text-green-700">1</span> <span class="text-stone-700"><strong>Ngăn cản mất nước:</strong> Giảm tốc độ mất nước của quả, giữ độ tươi lâu hơn</span></li>
+       <li class="flex items-start gap-3"><span class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 text-sm font-bold text-green-700">2</span> <span class="text-stone-700"><strong>Kháng khuẩn:</strong> Tính chất kháng khuẩn của chitosan làm chậm sự phát triển của vi sinh vật gây hư hỏng</span></li>
+       <li class="flex items-start gap-3"><span class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 text-sm font-bold text-green-700">3</span> <span class="text-stone-700"><strong>Nhúng 2 lần hiệu quả hơn:</strong> Lớp màng dày hơn tạo sự bảo vệ tốt hơn so với nhúng 1 lần</span></li>
+      </ul>
+     </div>
+    </section>
+    <div class="section-divider mb-16"></div><!-- Conclusion Section -->
+    <section id="conclusion" class="mb-16">
+     <div class="bg-gradient-to-r from-green-500 via-emerald-500 to-teal-600 rounded-2xl shadow-lg p-8 text-white">
+      <div class="flex items-center gap-3 mb-6">
+       <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center">
+        <span class="text-2xl">🏆</span>
+       </div>
+       <h2 class="font-heading text-2xl font-semibold">V. Kết luận</h2>
+      </div>
+      <div class="space-y-6">
+       <div class="bg-white/10 backdrop-blur rounded-xl p-6 border-l-4 border-white/50">
+        <h3 class="font-semibold text-lg mb-3">📌 Phát hiện chính</h3>
+        <p class="text-emerald-50 leading-relaxed">Qua thí nghiệm, chitosan điều chế từ vỏ tôm có khả năng bảo quản trái dâu <strong>hiệu quả</strong>. So với mẫu không nhúng, các mẫu dâu được nhúng chitosan có <strong>thời gian tươi lâu hơn</strong> và <strong>ít bị hư hỏng hơn</strong>.</p>
+       </div>
+       <div class="bg-white/10 backdrop-blur rounded-xl p-6 border-l-4 border-white/50">
+        <h3 class="font-semibold text-lg mb-3">⭐ Phương pháp tối ưu</h3>
+        <p class="text-emerald-50 leading-relaxed">Phương pháp <strong>nhúng chitosan 2 lần</strong> cho hiệu quả bảo quản <strong>tốt nhất</strong>, giữ dâu tươi trong suốt 7 ngày theo dõi mà không xuất hiện các dấu hiệu hư hỏng đáng kể.</p>
+       </div>
+       <div class="bg-white/10 backdrop-blur rounded-xl p-6 border-l-4 border-white/50">
+        <h3 class="font-semibold text-lg mb-3">🌍 Ý nghĩa thực tiễn</h3>
+        <p class="text-emerald-50 leading-relaxed">Nghiên cứu cho thấy tiềm năng ứng dụng chitosan trong bảo quản thực phẩm tươi, góp phần <strong>giảm thất thoát sau thu hoạch</strong> và hướng tới phát triển các <strong>vật liệu sinh học thân thiện với môi trường</strong> — một giải pháp bền vững cho nông nghiệp hiện đại.</p>
+       </div>
+      </div>
+     </div>
+    </section>
+    <div class="section-divider mb-16"></div><!-- Team Section -->
+    <section id="team" class="mb-16">
+     <div class="bg-white rounded-2xl shadow-lg p-8">
+      <div class="flex items-center gap-3 mb-8">
+       <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
+        <span class="text-2xl">👥</span>
+       </div>
+       <div>
+        <h2 id="team_intro" class="font-heading text-2xl font-semibold text-stone-800">Giới thiệu Đội Nhóm</h2>
+        <p class="text-sm text-stone-500">Nhóm 3 - Lớp 11A1</p>
+       </div>
+      </div><!-- Group Leader -->
+      <div class="mb-10">
+       <div class="flex items-center gap-2 mb-4"><span class="text-2xl">👑</span>
+        <h3 class="font-semibold text-lg text-red-600">Nhóm Trưởng</h3>
+       </div>
+       <div class="bg-gradient-to-r from-red-50 to-red-100 rounded-xl p-6 border-l-4 border-red-500">
+        <p class="font-semibold text-lg text-stone-800">NGÔ MINH ĐÔNG <span class="text-sm font-normal text-stone-600">(10)</span></p>
+        <p class="text-stone-600 text-sm mt-1">Điều phối nhóm, quản lý tiến độ dự án</p>
+       </div>
+      </div><!-- Team Members Grid -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+       <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-lg p-4 border border-blue-200 hover:shadow-md transition">
+        <p class="font-semibold text-stone-800">TRẦN NGỌC MINH CHÂU <span class="text-xs font-normal text-stone-600">(07)</span></p>
+       </div>
+       <div class="bg-gradient-to-br from-purple-50 to-purple-100 rounded-lg p-4 border border-purple-200 hover:shadow-md transition">
+        <p class="font-semibold text-stone-800">NGUYỄN HOÀNG ĐẠT <span class="text-xs font-normal text-stone-600">(09)</span></p>
+       </div>
+       <div class="bg-gradient-to-br from-indigo-50 to-indigo-100 rounded-lg p-4 border border-indigo-200 hover:shadow-md transition">
+        <p class="font-semibold text-stone-800">NGUYỄN NGỌC ĐỨC <span class="text-xs font-normal text-stone-600">(11)</span></p>
+       </div>
+       <div class="bg-gradient-to-br from-cyan-50 to-cyan-100 rounded-lg p-4 border border-cyan-200 hover:shadow-md transition">
+        <p class="font-semibold text-stone-800">NGUYỄN TIỂU LONG <span class="text-xs font-normal text-stone-600">(20)</span></p>
+       </div>
+       <div class="bg-gradient-to-br from-emerald-50 to-emerald-100 rounded-lg p-4 border border-emerald-200 hover:shadow-md transition">
+        <p class="font-semibold text-stone-800">NGUYỄN NGỌC BẢO NHI <span class="text-xs font-normal text-stone-600">(25)</span></p>
+       </div>
+       <div class="bg-gradient-to-br from-orange-50 to-orange-100 rounded-lg p-4 border border-orange-200 hover:shadow-md transition">
+        <p class="font-semibold text-stone-800">TRƯƠNG GIA PHÁT <span class="text-xs font-normal text-stone-600">(26)</span></p>
+       </div>
+       <div class="bg-gradient-to-br from-pink-50 to-pink-100 rounded-lg p-4 border border-pink-200 hover:shadow-md transition">
+        <p class="font-semibold text-stone-800">NGÔ GIA PHÚ <span class="text-xs font-normal text-stone-600">(27)</span></p>
+       </div>
+       <div class="bg-gradient-to-br from-rose-50 to-rose-100 rounded-lg p-4 border border-rose-200 hover:shadow-md transition">
+        <p class="font-semibold text-stone-800">CAO MINH PHÚC <span class="text-xs font-normal text-stone-600">(28)</span></p>
+       </div>
+       <div class="bg-gradient-to-br from-amber-50 to-amber-100 rounded-lg p-4 border border-amber-200 hover:shadow-md transition">
+        <p class="font-semibold text-stone-800">NGUYỄN MINH QUÂN <span class="text-xs font-normal text-stone-600">(30)</span></p>
+       </div>
+       <div class="bg-gradient-to-br from-lime-50 to-lime-100 rounded-lg p-4 border border-lime-200 hover:shadow-md transition">
+        <p class="font-semibold text-stone-800">TẤT TẤN VĨ <span class="text-xs font-normal text-stone-600">(39)</span></p>
+       </div>
+      </div>
+      <div class="mt-8 p-6 bg-gradient-to-r from-green-50 to-emerald-50 rounded-lg border border-green-200">
+       <p class="text-stone-700 text-center"><span class="font-semibold text-green-700">12 thành viên</span> cùng nhau thực hiện dự án nghiên cứu ứng dụng chitosan trong bảo quản nông sản, mang ý nghĩa khoa học và thực tiễn quan trọng cho phát triển bền vững.</p>
+      </div>
+     </div>
+    </section>
+   </main><!-- Footer -->
+   <footer class="gradient-bg text-white py-8 px-6">
+    <div class="max-w-5xl mx-auto text-center">
+     <div class="flex justify-center items-center gap-4 mb-4">
+      <span class="text-3xl">🍓</span> <span class="text-3xl">🦐</span> <span class="text-3xl">🌿</span>
+     </div>
+     <p class="text-green-200 text-sm">Nghiên cứu ứng dụng Chitosan trong bảo quản nông sản</p>
+     <p class="text-green-300 text-xs mt-2">Tham chiếu tiêu chuẩn: TCVN 3215-79</p>
+    </div>
+   </footer>
+  </div>
+  <script>
+    const defaultConfig = {
+      main_title: 'Ứng dụng Chitosan từ vỏ tôm<br>trong bảo quản trái dâu tây',
+      intro_text: 'Nghiên cứu về việc sử dụng vật liệu sinh học thân thiện môi trường để kéo dài thời gian bảo quản nông sản tươi',
+      primary_color: '#1a472a',
+      secondary_color: '#ffffff',
+      text_color: '#292524',
+      accent_color: '#dc2626',
+      secondary_accent: '#22c55e'
+    };
+
+    async function onConfigChange(config) {
+      const mainTitle = document.getElementById('main-title');
+      const introText = document.getElementById('intro-text');
+      
+      if (mainTitle) {
+        mainTitle.innerHTML = config.main_title || defaultConfig.main_title;
+      }
+      if (introText) {
+        introText.textContent = config.intro_text || defaultConfig.intro_text;
+      }
+    }
+
+    function mapToCapabilities(config) {
+      return {
+        recolorables: [
+          {
+            get: () => config.primary_color || defaultConfig.primary_color,
+            set: (value) => { config.primary_color = value; window.elementSdk.setConfig({ primary_color: value }); }
+          },
+          {
+            get: () => config.secondary_color || defaultConfig.secondary_color,
+            set: (value) => { config.secondary_color = value; window.elementSdk.setConfig({ secondary_color: value }); }
+          },
+          {
+            get: () => config.text_color || defaultConfig.text_color,
+            set: (value) => { config.text_color = value; window.elementSdk.setConfig({ text_color: value }); }
+          },
+          {
+            get: () => config.accent_color || defaultConfig.accent_color,
+            set: (value) => { config.accent_color = value; window.elementSdk.setConfig({ accent_color: value }); }
+          },
+          {
+            get: () => config.secondary_accent || defaultConfig.secondary_accent,
+            set: (value) => { config.secondary_accent = value; window.elementSdk.setConfig({ secondary_accent: value }); }
+          }
+        ],
+        borderables: [],
+        fontEditable: undefined,
+        fontSizeable: undefined
+      };
+    }
+
+    function mapToEditPanelValues(config) {
+      return new Map([
+        ['main_title', config.main_title || defaultConfig.main_title],
+        ['intro_text', config.intro_text || defaultConfig.intro_text]
+      ]);
+    }
+
+    if (window.elementSdk) {
+      window.elementSdk.init({
+        defaultConfig,
+        onConfigChange,
+        mapToCapabilities,
+        mapToEditPanelValues
+      });
+    }
+  </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9d6977a0955ba8f2',t:'MTc3MjU0OTU3MS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
